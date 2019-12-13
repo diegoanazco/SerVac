@@ -16,6 +16,34 @@ public class AppController {
 		return "menu";
 	}
 	
+	@GetMapping("/generic")
+	public String generic()
+	{
+		return "generic";
+	}
+	
+	@GetMapping("/galeriaVentana")
+	public String galeriaVentana()
+	{
+		return "galeriaVentana";
+	}
+	
+	@GetMapping("/galeriaVentanal")
+	public String galeriaVentanal()
+	{
+		return "galeriaVentanal";
+	}
+	@GetMapping("/galeriaMampara")
+	public String galeriaMampara()
+	{
+		return "galeriaMampara";
+	}
+	@GetMapping("/galeriaAluminio")
+	public String galeriaAluminio()
+	{
+		return "galeriaAluminio";
+	}
+	
 	@GetMapping("/user")
 	public String user() {
 		return "user";
