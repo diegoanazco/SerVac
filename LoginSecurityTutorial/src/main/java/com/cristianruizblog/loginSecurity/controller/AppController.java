@@ -43,7 +43,11 @@ public class AppController {
 	{
 		return "galeriaAluminio";
 	}
-	
+	@GetMapping("/productosList")
+	public String productosList()
+	{
+		return "productosList";
+	}
 	@GetMapping("/user")
 	public String user() {
 		return "user";
