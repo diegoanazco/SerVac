@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="C:\Users\Maria Luisa\Documents\ULASALLE\SOFT 7\CONSTRUCCION\servac.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+    Servac
+  </a>
+</nav>
+	<div class="container">
+		<br>
+		<div>
+			<a href="/save/0" class="btn btn-primary">Agregar</a>
+		</div>
+			<h2 th:if="${list.isEmpty()}">No hay productos</h2>
+			<div th:if="${!list.isEmpty()}">
+				<h2>Productos</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Dimension</th>
+							<th>Unidad</th>
+							<th>Precio</th>
+							<th>Espesor</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="productos : ${list}">
+							<td th:text ="${productos.nombre}">
+							<td th:text ="${productos.dimension}">
+							<td th:text ="${productos.unidad}">
+							<td th:text ="${productos.precio}">
+							<td th:text ="${productos.espesor}">
+							<td><a th:href="@{/save/{id}(id=${productos.id})}">Editar</a></td>
+							<td><a th:href="@{/delete/{id}(id=${productos.id})}">Eliminar</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+		
+</body>
+</html>
